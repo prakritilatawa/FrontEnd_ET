@@ -6,7 +6,7 @@ var form = document.getElementById('i1')
 form.addEventListener('submit',(e)=>{
    
     if(country.value===''|| country.value== null){
-        alert('Please enter Country name');
+        alert('Please enter the Country');
         return false;
         e.preventDefault();
 
@@ -24,3 +24,8 @@ form.addEventListener('submit',(e)=>{
     }
 
 })
+$.getJSON("https://api.covid19api.com/country/"+country+"?from="+startdate+"T00:00:00Z&to="+enddate+"T00:00:00Z",
+function(data){
+    console.log(data);
+
+});
